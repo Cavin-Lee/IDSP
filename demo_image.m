@@ -41,14 +41,10 @@ for i = 1 :length(str_domains)
         options.lambda=1;
         options.p=10;
         options.eta=0.1;
-        % EasyTL without intra-domain alignment [EasyTL(c)]
         [Acc1, ~] = SLMC_UDA(Xs',Ys,Xt',Yt,options);
         fprintf('Acc: %f\n',Acc1);
         
-        % EasyTL with CORAL for intra-domain alignment
-%         [Acc2, ~] = EasyTL(Xs,Ys,Xt,Yt);
-%         fprintf('Acc: %f\n',Acc2);
-        
+
         list_acc = [list_acc;[Acc1]];
 
     end
